@@ -1,0 +1,31 @@
+EXAMPLE SQL:
+
+CREATE TABLES:
+
+CREATE TABLE Cat(
+   ID INT PRIMARY KEY AUTO_INCREMENT,
+   Name VARCHAR (255),
+   Age INT,
+   FavoriteFood VARCHAR (255)
+);
+
+CREATE TABLE Dog(
+   ID INT PRIMARY KEY AUTO_INCREMENT,
+   Name VARCHAR (255),
+   Age INT,
+   FavoriteFood VARCHAR (255)
+);
+
+EXAMPLE INSERTS:
+
+INSERT INTO Cat (Name, Age, FavoriteFood)
+VALUES('socks', '6', 'salmon')
+
+INSERT INTO Cat (Name)
+VALUES('jynx')
+
+INSERT INTO Dog (Name, Age, FavoriteFood)
+VALUES('bandit', '2', 'bacon')
+
+INSERT INTO Dog (FavoriteFood)
+VALUES('kibble')

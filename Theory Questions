@@ -1,0 +1,29 @@
+1) How might you reduce the “copy/paste” problem between Cat and Dog?
+This problem can be solved using polymorphism. A base class called "Pet" can be used to store the shared functionality.
+"Dog" and "Cat" classes can inherit from the "Pet" class, only needing to define how they speak.
+
+2) How would you go about error handling?
+Ensure that there are try/catch statements everywhere necessary so that all exceptions will be properly handled.
+Add null checks to the Pet objects to avoid null pointer exceptions.
+It could be beneficial to implement a system to retry failed database operations in case they timeout ,
+especially if this program was to be scaled to work on the web with a lot of data.
+
+3) How would you approach this type of task working on a team of people?
+Work could be divided among the team member. One teammate could implement the custom cat and dog behaviors.
+Another teammate could implement the Database component, and a last teammate could implement the unit testing.
+
+4) How might you change or improve the Data.pseudo object interface?
+In the case of a Java JDBC implementation, the begin/commit/rollback actions could be automated by JDBC.
+By default, JDBC will autocommit , and each SQL statement is treated as an individual transaction.
+Thus, one could do away with the begin/commit/rollback methods in the Data.pseudo interface.
+Additional helper methods can be added, such as a method for deleting a Dog/Cat, and for getting all dogs/cats, for example.
+Ideally, a framework such as Hibernate could be used to provide ORM (object-relational mapping).
+The dog and cat classes could then correspond directly to their respective tables, and the framework could automatically
+insert them without the need to hand write sql strings which parse out the desired values from the java objects.
+
+5) Data integrity is very important in a production environment. What things can you do to ensure data integrity?
+Additional checks can be added to validate expected data, and to check for errors such as unwanted null values.
+If there are classes whose references should never be changed, they can be given the "final" java modifier.
+This will ensure that the class cant be reassigned to a new instance my mistake.
+Tests should be conducted to ensure that Cat/Dog objects are properly being stored in the database.
+This means that duplicates arent being allowed and that the expected data is being stored in the database.
