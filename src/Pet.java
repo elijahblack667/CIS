@@ -23,6 +23,19 @@ public abstract class Pet {
         setName(initialName);
     }
 
+    public void checkSpeech(){
+        speakCounter++;
+        //increment age every 5 times the pet speaks. Reset speech counter.
+        if(speakCounter==5){
+            age++;
+            speakCounter=0;
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+
     public double getAverageNameLength(){
         double total = 0.0;
         if(names.size()==0) {
@@ -33,26 +46,20 @@ public abstract class Pet {
         }
         return total / names.size();
     }
-    public String getName() {
-        return name;
-    }
-    public List<String> getNames() {
-        return names;
-    }
-    public int getAge() {
-        return age;
-    }
 
     public String getFavoriteFood() {
         return favoriteFood;
     }
 
-    public abstract String getTableName();
-
-    public void setName (String newName) {
-        name = newName;
-        names.add(newName);
+    public String getName() {
+        return name;
     }
+
+    public List<String> getNames() {
+        return names;
+    }
+
+    public abstract String getTableName();
 
     public void  setAge (int newAge) {
         age = newAge;
@@ -62,20 +69,16 @@ public abstract class Pet {
         favoriteFood = newFavoriteFood;
     }
 
+    public void setName (String newName) {
+        name = newName;
+        names.add(newName);
+    }
+
     public void speak(String input){
         System.out.println(input);
         checkSpeech();
     }
 
     public abstract void speak();
-
-    public void checkSpeech(){
-        speakCounter++;
-        //increment age every 5 times the pet speaks. Reset speech counter.
-        if(speakCounter==5){
-            age++;
-            speakCounter=0;
-        }
-    }
 
 }

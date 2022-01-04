@@ -31,7 +31,6 @@ public class DataTasks {
                 data.rollback();
             }
         }
-
     }
 
     public void savePetShop() {
@@ -45,6 +44,5 @@ public class DataTasks {
                 );
 
         newPets.forEach( (pet) -> insertPet(pet));
-
     }
 }

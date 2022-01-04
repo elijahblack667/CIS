@@ -9,36 +9,6 @@ public class Test {
         assert (cat.getAge() >= 5 && cat.getAge() <= 10);
     }
 
-    public void testCatName() {
-        Cat cat = new Cat("testName");
-        assert (cat.getName().equals("testName"));
-    }
-
-    public void testCatMeow() {
-        System.setOut(new PrintStream(outputStream));
-        Cat cat  = new Cat();
-        cat.speak();
-        assert (outputStream.toString().equals("meow\n"));
-        System.setOut(System.out);
-    }
-
-    public void testCatSpeak() {
-        System.setOut(new PrintStream(outputStream));
-        Cat cat  = new Cat();
-        cat.speak("testSpeech");
-        assert (outputStream.toString().equals("testSpeech\n"));
-    }
-
-    public void testCatNamesList() {
-        Cat cat = new Cat();
-        cat.setName("polly");
-        cat.setName("greta");
-        cat.setName("amber");
-        cat.setName("marsha");
-
-        assert (cat.getNames().size() == 4);
-
-    }
     public void testCatAverageNameLength() {
         Cat cat = new Cat();
         cat.setName("kitten");
@@ -52,6 +22,37 @@ public class Test {
         cat.setFavoriteFood("sardines");
 
         assert(cat.getFavoriteFood().equals("sardines"));
+    }
+
+    public void testCatMeow() {
+        System.setOut(new PrintStream(outputStream));
+        Cat cat  = new Cat();
+        cat.speak();
+        assert (outputStream.toString().equals("meow\n"));
+        System.setOut(System.out);
+    }
+
+    public void testCatName() {
+        Cat cat = new Cat("testName");
+        assert (cat.getName().equals("testName"));
+    }
+
+    public void testCatNamesList() {
+        Cat cat = new Cat();
+        cat.setName("polly");
+        cat.setName("greta");
+        cat.setName("amber");
+        cat.setName("marsha");
+
+        assert (cat.getNames().size() == 4);
+
+    }
+
+    public void testCatSpeak() {
+        System.setOut(new PrintStream(outputStream));
+        Cat cat  = new Cat();
+        cat.speak("testSpeech");
+        assert (outputStream.toString().equals("testSpeech\n"));
     }
 }
 

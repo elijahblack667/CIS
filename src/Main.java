@@ -24,6 +24,4 @@ public class Main {
         Data data = new Data("insert_DB_String_HERE");
         data.insert("Cat", cat);
     }
-
-
 }

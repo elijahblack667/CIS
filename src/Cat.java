@@ -15,5 +15,4 @@ public class Cat extends Pet {
     public void speak(){
         speak("meow");
     }
-
 }

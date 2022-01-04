@@ -41,20 +41,6 @@ public class Data {
             e.printStackTrace();
             return false;
         }
-
-    }
-
-    public boolean rollback (){
-        System.out.println("Rolling back transaction");
-        try {
-            db.rollback();
-            return true;
-        }
-        catch(SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-
     }
 
     public int insert(String table, Pet object) {
@@ -67,6 +53,18 @@ public class Data {
         } catch (SQLException e) {
             e.printStackTrace();
             return -1;
+        }
+    }
+
+    public boolean rollback (){
+        System.out.println("Rolling back transaction");
+        try {
+            db.rollback();
+            return true;
+        }
+        catch(SQLException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }
